@@ -8,13 +8,13 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.USER,
-        pass: process.env.PASS
+        user: 'bouaami.el@gmail.com',
+        pass:'heem zezn szfo lkdl'
     }
 });
 
 app.get('/send-candidature/:email/:id', async (req, res) => {
-    console.log(process.env.USER)
+   
     const recipientEmail = req.params.email;
     const candidatureId = req.params.id;
 
@@ -28,7 +28,7 @@ app.get('/send-candidature/:email/:id', async (req, res) => {
     }
 
     const mailOptions = {
-        from: process.env.USER,
+        from:'bouaami.el@gmail.com',
         to: recipientEmail,
         subject: 'Candidature Submission Confirmation',
         text: `Dear Candidate,
